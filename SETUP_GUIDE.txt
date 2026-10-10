@@ -1,0 +1,29 @@
+GAME WORLD ULTIMATE — VERSION 7 STARTER KIT
+================================================
+
+What's included
+- index.html: the current mobile-friendly demo storefront.
+- backend/schema.sql: starter PostgreSQL schema for Supabase.
+- backend/SETUP_GUIDE.txt: beginner-friendly setup steps.
+
+Why this is the next step
+The storefront alone cannot securely store accounts, products, sellers or orders. This SQL file creates a database foundation with Row Level Security policies. It does NOT yet connect the HTML storefront to the database.
+
+Start from an Android phone
+1. Open a browser and visit https://supabase.com/
+2. Create an account and a new project. Use a strong unique password and keep it private.
+3. Open the project's SQL Editor.
+4. Open backend/schema.sql from this ZIP in a text editor, copy all of it, paste it into SQL Editor, then run it.
+5. Check the Table Editor for profiles, games, products, seller_offers, orders and order_items.
+6. Do not put any secret/service-role key in index.html, a public ZIP, or a screenshot.
+
+Before public launch
+- Add a trusted server/Edge Functions for account profiles, order creation, price validation, payment webhooks and seller permissions.
+- Connect a payment provider that legally supports the business and Algeria.
+- Verify seller identities and product sourcing.
+- Use official/authorized suppliers; don't store game passwords.
+- Add privacy policy, terms, refund policy, customer support and age-appropriate legal/business checks.
+- Test security rules before collecting any customer information or money.
+
+Safety note
+This is a starter kit, not a live marketplace. No real payment, login or automatic game top-up is connected yet.
