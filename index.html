@@ -1,102 +1,650 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0e19"><title>GAME WORLD ULTIMATE</title>
-<style>
-:root{--bg:#0b0e19;--panel:#151a2d;--line:#2b3350;--text:#f6f7ff;--muted:#aab3cc;--purple:#8b5cf6;--cyan:#22d3ee}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0,#241847 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{max-width:1120px;margin:auto;padding:0 18px}header{position:sticky;top:0;z-index:3;background:#0b0e19ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center;font-weight:900;font-size:14px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:grid;place-items:center;color:#101323;font-size:22px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}.links{display:flex;gap:20px;color:var(--muted);font-size:13px}.tools{display:flex;gap:8px;align-items:center}select,.cart{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px;color:white}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:center;padding:54px 0 28px}.pill{display:inline-block;border:1px solid #4b3b80;background:#211a3b;color:#d8ceff;border-radius:30px;padding:7px 12px;font-size:11px;font-weight:800}h1{font-size:clamp(40px,6vw,67px);letter-spacing:-2px;line-height:1.02;margin:18px 0}.gradient{background:linear-gradient(90deg,#c3b2ff,#56e6ef);color:transparent;background-clip:text}.lead{color:var(--muted);line-height:1.75;max-width:550px}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}.primary{background:linear-gradient(100deg,var(--purple),#596dff);color:white}.secondary{background:var(--panel);border:1px solid var(--line);color:white}.art{border:1px solid #37385f;border-radius:27px;padding:22px;min-height:275px;background:linear-gradient(145deg,#29204f,#14243a 75%,#10404b);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.arttop,.artbottom{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:10px;padding:8px 10px;border:1px solid #4d5276;background:#10152a99;border-radius:9px;color:#d6defa}.controller{text-align:center;font-size:88px;filter:drop-shadow(0 15px 20px #0008)}.artbottom strong{font-size:20px}.artbottom small{display:block;color:#b8c5e2;margin-top:5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0 35px}.stat,.feature{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px}.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--muted)}section{padding:16px 0 35px}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.head h2{font-size:26px;margin:0}.head p{font-size:13px;color:var(--muted);margin:7px 0 0}.search{display:flex;gap:8px;max-width:390px;width:100%}.search input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px;color:white}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.chip{background:var(--panel);border:1px solid var(--line);border-radius:20px;color:var(--muted);padding:8px 13px;cursor:pointer;font-size:12px}.chip.active{background:#302454;border-color:var(--purple);color:white}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:linear-gradient(180deg,#171e33,#111626);border:1px solid var(--line);border-radius:16px;overflow:hidden}.cardart{height:112px;display:grid;place-items:center;font-size:48px;background:radial-gradient(circle at 50% 20%,#484078,#1b2340 65%,#111626)}.body{padding:13px}.kind{font-size:10px;color:#c4b5fd;font-weight:800;letter-spacing:1px}.body h3{font-size:15px;margin:7px 0}.desc{font-size:11px;color:var(--muted);min-height:31px;line-height:1.45}.priceRow{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:12px}.price{font-weight:900}.add{border:0;border-radius:9px;padding:8px 10px;background:#302454;color:white;font-weight:800;cursor:pointer}.notice{margin-top:18px;background:#10242b;border:1px solid #35505e;color:#c5f4fa;border-radius:13px;padding:14px;font-size:12px;line-height:1.6}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.feature .emoji{font-size:25px}.feature h3{font-size:15px;margin:10px 0 5px}.feature p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:11px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.2s;background:#202a43;border:1px solid #596b91;padding:12px 15px;border-radius:12px;z-index:5;text-align:center;max-width:90%;font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}.offers{display:grid;gap:8px;margin-top:12px}.offer{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#101626;border:1px solid var(--line);border-radius:10px;padding:10px}.offer small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.offer-price{font-weight:900;white-space:nowrap}.compare{margin-top:10px;width:100%;border:1px solid #6550a6;background:#292044;color:white;border-radius:9px;padding:9px;font-weight:800;cursor:pointer}.modal{display:none;position:fixed;inset:0;z-index:10;background:#050711d9;padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modalbox{width:min(100%,460px);max-height:85vh;overflow:auto;background:#151a2d;border:1px solid #3b4264;border-radius:18px;padding:18px}.modalhead{display:flex;justify-content:space-between;gap:12px;align-items:center}.modalhead h3{margin:0}.close{background:#272e48;color:white;border:1px solid #424b6c;border-radius:8px;padding:7px 10px;cursor:pointer}.modalnote{color:var(--muted);font-size:12px;line-height:1.6}
-@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:35px}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.art{min-height:225px}}
-@media(max-width:460px){.wrap{padding:0 12px}.nav{height:62px}.brand{font-size:11px}.logo{width:33px;height:33px}.tools select{max-width:94px;font-size:11px;padding:8px 4px}.cart{padding:8px}h1{letter-spacing:-1px}.lead{font-size:14px}.stats{gap:7px}.stat{padding:11px}.stat b{font-size:17px}.stat span{font-size:10px}.head{align-items:stretch;flex-direction:column}.search{max-width:none}.grid{gap:8px}.cardart{height:91px;font-size:40px}.body{padding:10px}.body h3{font-size:13px}.price{font-size:13px}.add{padding:7px}.head h2{font-size:23px}}
-</style></head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="#"><span class="logo">G</span><span>GAME WORLD<small>ULTIMATE MARKETPLACE</small></span></a><nav class="links"><a href="#games" data-key="navGames">Games</a><a href="#market" data-key="navMarket">Marketplace</a><a href="#why" data-key="navWhy">Why us</a></nav><div class="tools"><select id="lang" aria-label="Language"><option value="en">English</option><option value="ar">العربية</option><option value="fr">Français</option><option value="es">Español</option><option value="pt">Português</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="ko">한국어</option><option value="tr">Türkçe</option><option value="ru">Русский</option><option value="it">Italiano</option><option value="id">Bahasa Indonesia</option><option value="th">ไทย</option><option value="vi">Tiếng Việt</option><option value="pl">Polski</option><option value="hi">हिन्दी</option><option value="nl">Nederlands</option></select><button class="cart" id="cart">🛒 <b id="count">0</b></button></div></div></header>
-<main class="wrap"><div class="hero"><div><span class="pill" data-key="eyebrow">✦ YOUR NEXT LEVEL STARTS HERE</span><h1 data-html="heroTitle">One world.<br><span class="gradient">Every game.</span></h1><p class="lead" data-key="lead">Discover game top-ups, digital gift cards and gaming essentials in one place. Built for players, designed for the world.</p><div class="buttons"><a class="btn primary" href="#market" data-key="explore">Explore marketplace ↗</a><a class="btn secondary" href="#why" data-key="how">How it works</a></div></div><div class="art"><div class="arttop"><span class="tag">GWU / MARKET</span><span class="tag">✦ PLAYER FIRST</span></div><div class="controller">🎮</div><div class="artbottom"><div><strong>GAME WORLD</strong><small data-key="artSub">Your games. Your world.</small></div><span class="tag">LEVEL UP ↑</span></div></div></div>
-<div class="stats"><div class="stat"><b>🌍 Global</b><span data-key="stat1">Built for players everywhere</span></div><div class="stat"><b>18+</b><span data-key="stat2">Language-ready design</span></div><div class="stat"><b>🔒</b><span data-key="stat3">Security-first approach</span></div></div>
-<section id="games"><div class="head"><div><h2 data-key="popular">Popular games</h2><p data-key="popularSub">A starting lineup — more games can be added.</p></div></div><div class="chips" id="chips"><button class="chip active" data-filter="all" data-key="all">All products</button><button class="chip" data-filter="mobile" data-key="mobile">Mobile</button><button class="chip" data-filter="pc" data-key="pc">PC & Console</button><button class="chip" data-filter="topup" data-key="topups">Top-ups</button><button class="chip" data-filter="gift" data-key="giftcards">Gift cards</button></div></section>
-<section id="market"><div class="head"><div><h2 data-key="marketTitle">Marketplace picks</h2><p data-key="marketSub">Sample listings for the first prototype.</p></div><div class="search"><input id="query" type="search" placeholder="Search games or products…" data-placeholder="searchPh"><button class="btn secondary" id="searchBtn" data-key="search">Search</button></div></div><div class="grid" id="products"></div><div class="notice" data-key="warning">Prototype only. Product listings and prices are demo examples; checkout, payment, accounts, seller payouts and automatic top-ups are not connected. Never enter payment details.</div></section>
-<section id="why"><div class="head"><div><h2 data-key="whyTitle">Made for gamers</h2><p data-key="whySub">A strong foundation before real payments go live.</p></div></div><div class="features"><article class="feature"><div class="emoji">🛡️</div><h3 data-key="safeTitle">Safer by design</h3><p data-key="safeDesc">Clear policies, account protection and careful seller checks belong at the center of the platform.</p></article><article class="feature"><div class="emoji">🌐</div><h3 data-key="globalTitle">Global-ready</h3><p data-key="globalDesc">A multilingual interface and currency-ready architecture can help serve players across markets.</p></article><article class="feature"><div class="emoji">🤝</div><h3 data-key="sellerTitle">Built for sellers</h3><p data-key="sellerDesc">The planned marketplace can support seller listings, order tracking and transparent commissions.</p></article></div></section></main>
-<footer><div class="wrap foot"><div><b>GAME WORLD ULTIMATE</b><div style="margin-top:5px" data-key="footer">A marketplace concept for the gaming community.</div></div><div>© <span id="year"></span> · <span data-key="demo">Prototype — not a live store</span></div></div></footer><div class="modal" id="offerModal" role="dialog" aria-modal="true" aria-labelledby="offerTitle"><div class="modalbox"><div class="modalhead"><h3 id="offerTitle">Packages</h3><button class="close" id="closeOffers">✕</button></div><p class="modalnote" id="offerNote">Demo prices only. No payment is connected.</p><div class="offers" id="offerList"></div></div></div>
-<div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="modalbox"><div class="modalhead"><h3 id="cartTitle">Demo cart</h3><button class="close" id="closeCart">✕</button></div><p class="modalnote" id="cartNote">This is a local demo cart. It cannot accept payment.</p><div class="offers" id="cartList"></div><div class="priceRow"><strong id="cartTotal">Total: $0.00</strong><button class="btn secondary" id="clearCart">Clear cart</button></div></div></div><div class="toast" id="toast"></div>
-<script>
-const items=[
-[1,"Free Fire","mobile","🔥","TOP-UP","Free Fire Diamonds","Diamonds and memberships",1.00],
-[2,"PUBG Mobile","mobile","🪖","TOP-UP","PUBG Mobile UC","UC and Royale Pass",0.99],
-[3,"Call of Duty Mobile","mobile","🎯","TOP-UP","COD Points","CP and battle pass",0.99],
-[4,"Fortnite","pc","⚡","PASS / GIFT CARD","V-Bucks & Gift Cards","Regional availability varies",5.00],
-[5,"Roblox","pc","🧱","GIFT CARD","Roblox Gift Credit","Digital gift credit",5.00],
-[6,"Clash of Clans","mobile","🏰","TOP-UP","Clash Gems","Gems and Gold Pass",0.99],
-[7,"Mobile Legends","mobile","⚔️","TOP-UP","MLBB Diamonds","Diamonds and Starlight",0.99],
-[8,"Steam","pc","🟦","GIFT CARD","Steam Wallet","Wallet codes by region",5.00],
-[9,"PlayStation","pc","🎮","GIFT CARD","PlayStation Store","Wallet cards by region",10.00],
-[10,"Xbox","pc","🟩","GIFT CARD","Xbox Gift Card","Gift cards by region",10.00],
-[11,"Nintendo","pc","🍄","GIFT CARD","Nintendo eShop","eShop cards by region",10.00],
-[12,"Google Play","mobile","▶️","GIFT CARD","Google Play Gift Card","Country restrictions apply",5.00],
-[13,"Apple Gift Card","mobile","🍎","GIFT CARD","Apple Gift Card","Country restrictions apply",5.00],
-[14,"Razer Gold","pc","🐍","GIFT CARD","Razer Gold","Regional wallet credit",5.00],
-[15,"EA SPORTS FC Mobile","mobile","⚽","TOP-UP","FC Points","Availability depends on region",1.00],
-[16,"Blood Strike","mobile","🩸","TOP-UP","Gold","Check supported region",1.00],
-[17,"Genshin Impact","mobile","✨","TOP-UP","Genesis Crystals","Top-up availability varies",0.99],
-[18,"Honkai: Star Rail","mobile","🚄","TOP-UP","Oneiric Shards","Top-up availability varies",0.99],
-[19,"Wuthering Waves","mobile","🌊","TOP-UP","Lunites","Top-up availability varies",0.99],
-[20,"Zenless Zone Zero","mobile","🌆","TOP-UP","Monochromes","Top-up availability varies",0.99],
-[21,"Arena Breakout","mobile","🛡️","TOP-UP","Bonds","Top-up availability varies",0.99],
-[22,"Delta Force","mobile","🚁","TOP-UP","Delta Coins","Top-up availability varies",0.99],
-[23,"Honor of Kings","mobile","👑","TOP-UP","Tokens","Top-up availability varies",0.99],
-[24,"Minecraft","pc","⛏️","GAME / GIFT","Minecraft","Platform and region matter",5.00]
-];
-const dict={
-en:{navGames:"Games",navMarket:"Marketplace",navWhy:"Why us",eyebrow:"✦ YOUR NEXT LEVEL STARTS HERE",heroTitle:'One world.<br><span class="gradient">Every game.</span>',lead:"Discover game top-ups, digital gift cards and gaming essentials in one place. Built for players, designed for the world.",explore:"Explore marketplace ↗",how:"How it works",artSub:"Your games. Your world.",stat1:"Built for players everywhere",stat2:"Language-ready design",stat3:"Security-first approach",popular:"Popular games",popularSub:"A starting lineup — more games can be added.",all:"All products",mobile:"Mobile",pc:"PC & Console",topups:"Top-ups",giftcards:"Gift cards",marketTitle:"Marketplace picks",marketSub:"Demo price examples only; most products need current authorized price verification.",searchPh:"Search games or products…",search:"Search",warning:"Prototype only. Product listings and prices are demo examples; checkout, payment, accounts, seller payouts and automatic top-ups are not connected. Never enter payment details.",whyTitle:"Made for gamers",whySub:"A strong foundation before real payments go live.",safeTitle:"Safer by design",safeDesc:"Clear policies, account protection and careful seller checks belong at the center of the platform.",globalTitle:"Global-ready",globalDesc:"A multilingual interface and currency-ready architecture can help serve players across markets.",sellerTitle:"Built for sellers",sellerDesc:"The planned marketplace can support seller listings, order tracking and transparent commissions.",footer:"A marketplace concept for the gaming community.",demo:"Prototype — not a live store",from:"From",offers:"packages",compare:"View packages & prices",seller:"Demo seller",delivery:"Delivery estimate shown after seller verification",samplePrice:"Illustrative package prices only",packages:"Packages",quantity:"Package",regionalPriceNote:"All prices in this demo are illustrative, not live quotes. Real prices depend on country, platform, tax and seller. Verify with an official or authorized store before any purchase.",notVerified:"Price not verified yet",checkBeforeLaunch:"We will add this product after confirming its current price from an authorized source.",add:"Add",added:"Added to demo cart",empty:"Your demo cart is empty.",cart:"Demo cart",noResults:"No matching products."},
-ar:{navGames:"الألعاب",navMarket:"السوق",navWhy:"لماذا نحن",eyebrow:"✦ مستواك القادم يبدأ هنا",heroTitle:'عالم واحد.<br><span class="gradient">كل الألعاب.</span>',lead:"اكتشف شحن الألعاب وبطاقات الهدايا الرقمية واحتياجات اللاعبين في مكان واحد، ضمن منصة مصممة للاعبين من العالم كله.",explore:"تصفح السوق ↗",how:"كيف يعمل",artSub:"ألعابك. عالمك.",stat1:"مصمم للاعبين في كل مكان",stat2:"واجهة قابلة لدعم اللغات",stat3:"الأمان أولًا",popular:"ألعاب مشهورة",popularSub:"هذه البداية فقط ويمكن إضافة ألعاب أخرى.",all:"كل المنتجات",mobile:"الهاتف",pc:"الكمبيوتر والمنصات",topups:"شحن الألعاب",giftcards:"بطاقات الهدايا",marketTitle:"اختيارات من السوق",marketSub:"أسعار توضيحية فقط؛ يجب التحقق من الأسعار الحالية من مصادر معتمدة.",searchPh:"ابحث عن لعبة أو منتج…",search:"بحث",warning:"نسخة تجريبية فقط. المنتجات والأسعار والسلة للتوضيح؛ الحسابات والدفع ومستحقات البائعين والشحن الآلي غير مفعّلة. لا تدخل معلومات الدفع.",whyTitle:"صُنع للاعبين",whySub:"نبني أساسًا قويًا قبل تفعيل الدفع الحقيقي.",safeTitle:"الأمان في التصميم",safeDesc:"سياسات واضحة وحماية للحساب ومراجعة دقيقة للبائعين عناصر أساسية في المنصة.",globalTitle:"جاهز للعالم",globalDesc:"واجهة متعددة اللغات وتصميم قابل لدعم العملات يساعدان على خدمة أسواق مختلفة.",sellerTitle:"مصمم للبائعين",sellerDesc:"يمكن للمنصة مستقبلًا دعم عروض البائعين وتتبع الطلبات والعمولات الواضحة.",footer:"تصور لسوق يخدم مجتمع الألعاب.",demo:"نسخة تجريبية — ليست متجرًا مباشرًا",from:"ابتداءً من",offers:"باقات",compare:"شوف الباقات والأسعار",seller:"بائع تجريبي",delivery:"تُعرض مدة التسليم بعد التحقق من البائع",samplePrice:"أسعار الباقات للتوضيح فقط",packages:"الباقات",quantity:"الباقة",regionalPriceNote:"كل الأسعار في هذه النسخة توضيحية وليست أسعارًا مباشرة. الأسعار الحقيقية تختلف حسب البلد والمنصة والضرائب والبائع. تحقق من متجر رسمي أو معتمد قبل الشراء.",notVerified:"السعر لم يتم التحقق منه بعد",checkBeforeLaunch:"نضيف هذا المنتج بعد التأكد من سعره الحالي من مصدر معتمد.",add:"أضف",added:"أُضيف إلى السلة التجريبية",empty:"السلة التجريبية فارغة.",cart:"السلة التجريبية",noResults:"لا توجد منتجات مطابقة."},
-fr:{navGames:"Jeux",navMarket:"Boutique",navWhy:"Pourquoi nous",eyebrow:"✦ VOTRE PROCHAIN NIVEAU COMMENCE ICI",heroTitle:'Un monde.<br><span class="gradient">Tous les jeux.</span>',lead:"Découvrez recharges de jeux, cartes cadeaux numériques et essentiels gaming en un seul endroit.",explore:"Explorer la boutique ↗",how:"Comment ça marche",artSub:"Vos jeux. Votre monde.",stat1:"Pour les joueurs partout",stat2:"Interface multilingue",stat3:"La sécurité d’abord",popular:"Jeux populaires",popularSub:"Une sélection de départ — d’autres jeux pourront être ajoutés.",all:"Tous les produits",mobile:"Mobile",pc:"PC et consoles",topups:"Recharges",giftcards:"Cartes cadeaux",marketTitle:"Sélection de la boutique",marketSub:"Prix de démonstration uniquement; les prix actuels doivent être vérifiés auprès de sources autorisées.",searchPh:"Rechercher un jeu ou produit…",search:"Rechercher",warning:"Prototype uniquement. Produits, prix et panier sont des exemples; comptes, paiement et recharges automatiques ne sont pas connectés. N’entrez aucune donnée de paiement.",whyTitle:"Pensé pour les joueurs",whySub:"Une base solide avant les paiements réels.",safeTitle:"Sécurité intégrée",safeDesc:"Des règles claires, la protection des comptes et la vérification des vendeurs sont essentielles.",globalTitle:"Prêt pour le monde",globalDesc:"Une interface multilingue et une architecture adaptée aux devises peuvent servir plusieurs marchés.",sellerTitle:"Pour les vendeurs",sellerDesc:"La marketplace pourra proposer des annonces, le suivi des commandes et des commissions transparentes.",footer:"Concept de marketplace pour la communauté gaming.",demo:"Prototype — pas une boutique en direct",from:"À partir de",offers:"packs",compare:"Voir les packs et prix",seller:"Vendeur démo",delivery:"Délai indiqué après vérification du vendeur",samplePrice:"Prix des packs indicatifs uniquement",packages:"Packs",quantity:"Pack",regionalPriceNote:"Tous les prix de cette démo sont indicatifs, pas des tarifs en direct. Vérifiez auprès d’une boutique officielle ou autorisée.",notVerified:"Prix pas encore vérifié",checkBeforeLaunch:"Ce produit sera ajouté après vérification auprès d’une source autorisée.",add:"Ajouter",added:"Ajouté au panier démo",empty:"Votre panier démo est vide.",cart:"Panier démo",noResults:"Aucun produit correspondant."}
-};
-let language="en",filter="all",cart=[];
-function tr(k){return (dict[language]&&dict[language][k])||dict.en[k]||k}
-function render(){
-let q=document.getElementById("query").value.toLowerCase().trim();
-let found=items.filter(p=>(filter==="all"||p[2]===filter||(filter==="topup"&&p[4].includes("TOP-UP"))||(filter==="gift"&&p[4].includes("GIFT")))&&p.slice(1).join(" ").toLowerCase().includes(q));
-let target=document.getElementById("products");
-if(!found.length){target.innerHTML='<p style="color:var(--muted)">'+tr("noResults")+'</p>';return}
-target.innerHTML=found.map(p=>{let offers=getBundles(p);return `<article class="card"><div class="cardart">${p[3]}</div><div class="body"><div class="kind">${p[4]}</div><h3>${p[5]}</h3><div class="desc">${p[1]} · ${p[6]}</div><div class="priceRow"><span class="price">${offers.length?tr("from")+" "+offers[0][1]:tr("notVerified")}</span><span style="font-size:10px;color:var(--muted)">${offers.length?offers.length+" "+tr("offers"):""}</span></div><button class="compare" data-compare="${p[0]}">${tr("compare")}</button></div></article>`}).join("");
-target.querySelectorAll("[data-compare]").forEach(b=>b.onclick=()=>showOffers(+b.dataset.compare))
-}
-function getBundles(p){
-const data={
-1:[["100 diamonds","$1.00"],["210 diamonds","$2.00"],["530 diamonds","$5.00"],["1,080 diamonds","$10.00"]],
-2:[["60 UC","$0.99"],["325 UC","$4.99"],["660 UC","$9.99"]],
-3:[["80 CP","$0.99"],["420 CP","$4.99"],["880 CP","$9.99"]],
-6:[["80 gems","$0.99"],["500 gems","$4.99"],["1,200 gems","$9.99"]],
-7:[["56 diamonds","$0.99"],["165 diamonds","$2.99"],["568 diamonds","$9.99"]]
-};
-return data[p[0]]||[];
-}
-function showOffers(id){
-const p=items.find(x=>x[0]===id);if(!p)return;const bundles=getBundles(p);
-document.getElementById("offerTitle").textContent=p[5]+" — "+tr("packages");
-document.getElementById("offerNote").textContent=bundles.length?tr("regionalPriceNote"):tr("notVerified");
-document.getElementById("offerList").innerHTML=bundles.length?bundles.map((b,i)=>`<div class="offer"><div><strong>${b[0]}</strong><small>${tr("quantity")} ${i+1} · ${tr("samplePrice")}</small></div><span class="offer-price">${b[1]}</span><button class="add" data-add="${p[0]}" data-name="${b[0]}" data-price="${parseFloat(b[1].replace(/[^0-9.]/g,''))}">${tr("add")}</button></div>`).join(""):`<div class="offer"><div><strong>${tr("notVerified")}</strong><small>${tr("checkBeforeLaunch")}</small></div></div>`;
-document.getElementById("offerList").querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>{cart.push({product:p[5],bundle:b.dataset.name,price:Number(b.dataset.price)});document.getElementById("count").textContent=cart.length;toast(tr("added"));});
-document.getElementById("offerModal").classList.add("open")
-}
-document.getElementById("closeOffers").onclick=()=>document.getElementById("offerModal").classList.remove("open");
-document.getElementById("offerModal").onclick=e=>{if(e.target.id==="offerModal")e.currentTarget.classList.remove("open")};
-function toast(s){let e=document.getElementById("toast");e.textContent=s;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2300)}
-function setLanguage(v){language=v;document.documentElement.lang=v;document.documentElement.dir=v==="ar"?"rtl":"ltr";document.querySelectorAll("[data-key]").forEach(e=>{let k=e.dataset.key;if(dict[v]&&dict[v][k])e.innerHTML=dict[v][k]});document.querySelectorAll("[data-placeholder]").forEach(e=>{let k=e.dataset.placeholder;e.placeholder=tr(k)});render()}
-document.getElementById("lang").onchange=e=>setLanguage(e.target.value);
-document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));render()});
-document.getElementById("query").oninput=render;document.getElementById("searchBtn").onclick=render;
-function renderCart(){
-const list=document.getElementById("cartList");
-document.getElementById("cartTitle").textContent=tr("cart");
-document.getElementById("cartNote").textContent=tr("warning");
-list.innerHTML=cart.length?cart.map((p,i)=>`<div class="offer"><div><strong>${p.product}</strong><small>${p.bundle}</small></div><span class="offer-price">$${p.price.toFixed(2)}</span><button class="close" data-remove="${i}">✕</button></div>`).join(""):`<p class="modalnote">${tr("empty")}</p>`;
-document.getElementById("cartTotal").textContent="Total: $"+cart.reduce((s,p)=>s+p.price,0).toFixed(2);
-list.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.remove,1);document.getElementById("count").textContent=cart.length;renderCart()});
-}
-document.getElementById("cart").onclick=()=>{renderCart();document.getElementById("cartModal").classList.add("open")};
-document.getElementById("closeCart").onclick=()=>document.getElementById("cartModal").classList.remove("open");
-document.getElementById("cartModal").onclick=e=>{if(e.target.id==="cartModal")e.currentTarget.classList.remove("open")};
-document.getElementById("clearCart").onclick=()=>{cart=[];document.getElementById("count").textContent="0";renderCart()};
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e19">
+<meta name="description" content="GAME WORLD ULTIMATE - Gaming marketplace prototype">
+<title>GAME WORLD ULTIMATE</title>
 
-document.getElementById("year").textContent=new Date().getFullYear();render();
-</script></body></html>
+<style>
+:root {
+  --bg:#0b0e19;
+  --panel:#151a2d;
+  --line:#2b3350;
+  --text:#f6f7ff;
+  --muted:#aab3cc;
+  --purple:#8b5cf6;
+  --cyan:#22d3ee;
+}
+* { box-sizing:border-box }
+body {
+  margin:0;
+  background:radial-gradient(ellipse at 85% 0,#241847,transparent 38%),var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+}
+a { color:inherit;text-decoration:none }
+button,input,select { font:inherit }
+button { cursor:pointer }
+.wrap { max-width:1120px;margin:auto;padding:0 16px }
+header {
+  position:sticky;top:0;z-index:5;
+  background:#0b0e19ed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav {
+  min-height:66px;display:flex;
+  align-items:center;justify-content:space-between;gap:12px;
+}
+.brand { display:flex;gap:10px;align-items:center;font-weight:900;font-size:14px }
+.logo {
+  width:39px;height:39px;border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  display:grid;place-items:center;color:#101323;font-size:22px;
+}
+.brand small { display:block;color:var(--muted);font-size:9px;letter-spacing:2px }
+.links,.tools { display:flex;gap:12px;align-items:center }
+.links { color:var(--muted);font-size:13px }
+.links a:hover,footer a:hover { color:var(--cyan) }
+select,.cart {
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:9px;color:white;
+}
+.hero {
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:25px;align-items:center;padding:45px 0 25px;
+}
+.pill {
+  display:inline-block;border:1px solid #4b3b80;
+  background:#211a3b;color:#d8ceff;border-radius:30px;
+  padding:7px 12px;font-size:11px;font-weight:800;
+}
+h1 { font-size:clamp(40px,6vw,67px);letter-spacing:-2px;line-height:1.04;margin:18px 0 }
+.gradient {
+  background:linear-gradient(90deg,#c3b2ff,#56e6ef);
+  color:transparent;background-clip:text;
+}
+.lead { color:var(--muted);line-height:1.75;max-width:550px }
+.buttons { display:flex;gap:10px;flex-wrap:wrap;margin-top:22px }
+.btn { display:inline-block;border:0;border-radius:12px;padding:12px 16px;font-weight:800 }
+.primary { background:linear-gradient(100deg,var(--purple),#596dff);color:white }
+.secondary { background:var(--panel);border:1px solid var(--line);color:white }
+.art {
+  border:1px solid #37385f;border-radius:25px;padding:22px;min-height:245px;
+  background:linear-gradient(145deg,#29204f,#14243a 75%,#10404b);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.arttop,.artbottom { display:flex;justify-content:space-between;align-items:center;gap:8px }
+.tag {
+  font-size:10px;padding:8px;border:1px solid #4d5276;
+  background:#10152a99;border-radius:9px;color:#d6defa;
+}
+.controller { text-align:center;font-size:78px }
+.artbottom strong { font-size:19px }
+.artbottom small { display:block;color:#b8c5e2;margin-top:5px }
+.stats { display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0 30px }
+.stat,.feature { background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px }
+.stat b { display:block;font-size:20px }
+.stat span { font-size:12px;color:var(--muted) }
+section { padding:15px 0 30px }
+.head { display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px }
+.head h2 { font-size:25px;margin:0 }
+.head p { font-size:13px;color:var(--muted);margin:7px 0 0 }
+.search { display:flex;gap:8px;max-width:390px;width:100% }
+.search input {
+  flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:11px;color:white;
+}
+.chips { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px }
+.chip {
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  color:var(--muted);padding:8px 13px;font-size:12px;
+}
+.chip.active { background:#302454;border-color:var(--purple);color:white }
+.grid { display:grid;grid-template-columns:repeat(4,1fr);gap:13px }
+.card {
+  background:linear-gradient(180deg,#171e33,#111626);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+}
+.cardart {
+  height:105px;display:grid;place-items:center;font-size:45px;
+  background:radial-gradient(circle at 50% 20%,#484078,#1b2340 65%,#111626);
+}
+.body { padding:13px }
+.kind { font-size:10px;color:#c4b5fd;font-weight:800;letter-spacing:1px }
+.body h3 { font-size:15px;margin:7px 0 }
+.desc { font-size:11px;color:var(--muted);min-height:31px;line-height:1.45 }
+.priceRow { display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:12px }
+.price { font-weight:900;font-size:13px }
+.compare {
+  margin-top:10px;width:100%;border:1px solid #6550a6;
+  background:#292044;color:white;border-radius:9px;padding:9px;font-weight:800;
+}
+.notice {
+  margin-top:18px;background:#10242b;border:1px solid #35505e;color:#c5f4fa;
+  border-radius:13px;padding:14px;font-size:12px;line-height:1.7;
+}
+.features { display:grid;grid-template-columns:repeat(3,1fr);gap:13px }
+.feature .emoji { font-size:25px }
+.feature h3 { font-size:15px;margin:10px 0 5px }
+.feature p { font-size:12px;color:var(--muted);line-height:1.65;margin:0 }
+footer { border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px }
+.foot { display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap }
+.footlinks { display:flex;gap:15px;flex-wrap:wrap;margin-top:12px }
+.footlinks a { text-decoration:underline;text-underline-offset:3px }
+.modal {
+  display:none;position:fixed;inset:0;z-index:10;background:#050711d9;
+  padding:18px;align-items:center;justify-content:center;
+}
+.modal.open { display:flex }
+.modalbox {
+  width:min(100%,460px);max-height:85vh;overflow:auto;
+  background:var(--panel);border:1px solid #3b4264;border-radius:18px;padding:18px;
+}
+.modalhead { display:flex;justify-content:space-between;gap:12px;align-items:center }
+.modalhead h3 { margin:0 }
+.close {
+  background:#272e48;color:white;border:1px solid #424b6c;
+  border-radius:8px;padding:7px 10px;
+}
+.modalnote { color:var(--muted);font-size:12px;line-height:1.6 }
+.offers { display:grid;gap:8px;margin-top:12px }
+.offer {
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  background:#101626;border:1px solid var(--line);border-radius:10px;padding:10px;
+}
+.offer small { display:block;color:var(--muted);font-size:11px;margin-top:3px }
+.offer-price { font-weight:900;white-space:nowrap }
+.add { border:0;border-radius:9px;padding:8px 10px;background:#302454;color:white;font-weight:800 }
+.toast {
+  position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);
+  opacity:0;transition:.2s;background:#202a43;border:1px solid #596b91;
+  padding:12px 15px;border-radius:12px;z-index:20;text-align:center;
+  max-width:90%;font-size:13px;pointer-events:none;
+}
+.toast.show { opacity:1;transform:translate(-50%,0) }
+@media(max-width:800px) {
+  .links { display:none }
+  .hero { grid-template-columns:1fr;padding-top:30px }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .features { grid-template-columns:1fr }
+}
+@media(max-width:460px) {
+  .wrap { padding:0 12px }
+  .nav { min-height:60px }
+  .brand { font-size:11px }
+  .logo { width:33px;height:33px }
+  .tools { gap:5px }
+  .tools select { max-width:95px;font-size:11px;padding:8px 4px }
+  .cart { padding:8px }
+  h1 { letter-spacing:-1px }
+  .lead { font-size:14px }
+  .stats { gap:7px }
+  .stat { padding:10px }
+  .stat b { font-size:16px }
+  .stat span { font-size:10px }
+  .head { align-items:stretch;flex-direction:column }
+  .search { max-width:none }
+  .grid { gap:8px }
+  .cardart { height:90px;font-size:38px }
+  .body { padding:10px }
+  .body h3 { font-size:13px }
+  .head h2 { font-size:23px }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="logo">G</span>
+      <span>GAME WORLD<small>ULTIMATE MARKETPLACE</small></span>
+    </a>
+    <nav class="links">
+      <a href="#games" data-key="navGames">Games</a>
+      <a href="#market" data-key="navMarket">Marketplace</a>
+      <a href="#why" data-key="navWhy">Why us</a>
+    </nav>
+    <div class="tools">
+      <select id="lang" aria-label="Language">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+      </select>
+      <button class="cart" id="cart" type="button">🛒 <b id="count">0</b></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <span class="pill" data-key="eyebrow">✦ YOUR NEXT LEVEL STARTS HERE</span>
+      <h1 data-html="heroTitle">One world.<br><span class="gradient">Every game.</span></h1>
+      <p class="lead" data-key="lead">Discover gaming products in one place.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#market" data-key="explore">Explore marketplace ↗</a>
+        <a class="btn secondary" href="#why" data-key="how">How it works</a>
+      </div>
+    </div>
+    <div class="art">
+      <div class="arttop">
+        <span class="tag">GWU / MARKET</span>
+        <span class="tag">✦ PLAYER FIRST</span>
+      </div>
+      <div class="controller">🎮</div>
+      <div class="artbottom">
+        <div><strong>GAME WORLD</strong><small data-key="artSub">Your games. Your world.</small></div>
+        <span class="tag">LEVEL UP ↑</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>🌍 Global</b><span data-key="stat1">For players everywhere</span></div>
+    <div class="stat"><b>3</b><span data-key="stat2">Interface languages</span></div>
+    <div class="stat"><b>🔒</b><span data-key="stat3">Security matters</span></div>
+  </div>
+
+  <section id="games">
+    <div class="head">
+      <div>
+        <h2 data-key="popular">Popular games</h2>
+        <p data-key="popularSub">Discover gaming products.</p>
+      </div>
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip active" data-filter="all" data-key="all">All products</button>
+      <button class="chip" data-filter="mobile" data-key="mobile">Mobile</button>
+      <button class="chip" data-filter="pc" data-key="pc">PC & Console</button>
+      <button class="chip" data-filter="topup" data-key="topups">Top-ups</button>
+      <button class="chip" data-filter="gift" data-key="giftcards">Gift cards</button>
+    </div>
+  </section>
+
+  <section id="market">
+    <div class="head">
+      <div>
+        <h2 data-key="marketTitle">Marketplace</h2>
+        <p data-key="marketSub">Illustrative demo listings and prices.</p>
+      </div>
+      <div class="search">
+        <input id="query" type="search" placeholder="Search products…" data-placeholder="searchPh">
+        <button class="btn secondary" id="searchBtn" data-key="search">Search</button>
+      </div>
+    </div>
+    <div class="grid" id="products"></div>
+    <div class="notice" data-key="warning">
+      Prototype only. Products and prices are examples. Accounts, checkout, payments, seller payouts and automatic top-ups are not connected. Never enter payment details.
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="head">
+      <div>
+        <h2 data-key="whyTitle">Made for gamers</h2>
+        <p data-key="whySub">A foundation for a future marketplace.</p>
+      </div>
+    </div>
+    <div class="features">
+      <article class="feature">
+        <div class="emoji">🛡️</div>
+        <h3 data-key="safeTitle">Safer by design</h3>
+        <p data-key="safeDesc">Clear policies and secure systems matter.</p>
+      </article>
+      <article class="feature">
+        <div class="emoji">🌐</div>
+        <h3 data-key="globalTitle">Global-ready</h3>
+        <p data-key="globalDesc">Arabic, French and English interface.</p>
+      </article>
+      <article class="feature">
+        <div class="emoji">🤝</div>
+        <h3 data-key="sellerTitle">Built for sellers</h3>
+        <p data-key="sellerDesc">Seller listings and order tracking are planned features.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <b>GAME WORLD ULTIMATE</b>
+      <div style="margin-top:5px" data-key="footer">A marketplace concept for gamers.</div>
+      <div class="footlinks">
+        <a href="privacy.html" data-key="privacy">Privacy Policy</a>
+        <a href="#games" data-key="navGames">Games</a>
+        <a href="#market" data-key="navMarket">Marketplace</a>
+      </div>
+    </div>
+    <div>© <span id="year"></span> · <span data-key="demo">Prototype — not a live store</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="offerModal" role="dialog" aria-modal="true" aria-labelledby="offerTitle">
+  <div class="modalbox">
+    <div class="modalhead">
+      <h3 id="offerTitle">Packages</h3>
+      <button class="close" id="closeOffers" type="button" aria-label="Close">✕</button>
+    </div>
+    <p class="modalnote" id="offerNote">Demo prices only. No payment is connected.</p>
+    <div class="offers" id="offerList"></div>
+  </div>
+</div>
+
+<div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <div class="modalbox">
+    <div class="modalhead">
+      <h3 id="cartTitle">Demo cart</h3>
+      <button class="close" id="closeCart" type="button" aria-label="Close">✕</button>
+    </div>
+    <p class="modalnote" id="cartNote">This demo cart cannot accept payment.</p>
+    <div class="offers" id="cartList"></div>
+    <div class="priceRow">
+      <strong id="cartTotal">Total: $0.00</strong>
+      <button class="btn secondary" id="clearCart" type="button" data-key="clear">Clear cart</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const items = [
+  [1,"Free Fire","mobile","🔥","TOP-UP","Free Fire Diamonds","Diamonds and memberships"],
+  [2,"PUBG Mobile","mobile","🪖","TOP-UP","PUBG Mobile UC","UC and Royale Pass"],
+  [3,"Call of Duty Mobile","mobile","🎯","TOP-UP","COD Points","CP and battle pass"],
+  [4,"Fortnite","pc","⚡","GIFT CARD","V-Bucks & Gift Cards","Regional availability varies"],
+  [5,"Roblox","pc","🧱","GIFT CARD","Roblox Gift Credit","Digital gift credit"],
+  [6,"Clash of Clans","mobile","🏰","TOP-UP","Clash Gems","Gems and Gold Pass"],
+  [7,"Mobile Legends","mobile","⚔️","TOP-UP","MLBB Diamonds","Diamonds and memberships"],
+  [8,"Steam","pc","🟦","GIFT CARD","Steam Wallet","Wallet codes by region"],
+  [9,"PlayStation","pc","🎮","GIFT CARD","PlayStation Store","Regional availability varies"],
+  [10,"Xbox","pc","🟩","GIFT CARD","Xbox Gift Card","Regional availability varies"],
+  [11,"Nintendo","pc","🍄","GIFT CARD","Nintendo eShop","Regional availability varies"],
+  [12,"Google Play","mobile","▶️","GIFT CARD","Google Play Gift Card","Country restrictions apply"],
+  [13,"Apple Gift Card","mobile","🍎","GIFT CARD","Apple Gift Card","Country restrictions apply"],
+  [14,"Razer Gold","pc","🐍","GIFT CARD","Razer Gold","Regional wallet credit"],
+  [15,"EA SPORTS FC Mobile","mobile","⚽","TOP-UP","FC Points","Availability depends on region"],
+  [16,"Blood Strike","mobile","🎮","TOP-UP","Gold","Check supported region"],
+  [17,"Genshin Impact","mobile","✨","TOP-UP","Genesis Crystals","Availability varies"],
+  [18,"Honkai: Star Rail","mobile","🚄","TOP-UP","Oneiric Shards","Availability varies"],
+  [19,"Wuthering Waves","mobile","🌊","TOP-UP","Lunites","Availability varies"],
+  [20,"Minecraft","pc","⛏️","GAME / GIFT","Minecraft","Platform and region matter"]
+];
+
+const dict = {
+en:{
+navGames:"Games",navMarket:"Marketplace",navWhy:"Why us",
+eyebrow:"✦ YOUR NEXT LEVEL STARTS HERE",
+heroTitle:'One world.<br><span class="gradient">Every game.</span>',
+lead:"Discover game top-ups, digital gift cards and gaming essentials in one place.",
+explore:"Explore marketplace ↗",how:"How it works",artSub:"Your games. Your world.",
+stat1:"For players everywhere",stat2:"Interface languages",stat3:"Security matters",
+popular:"Popular games",popularSub:"Discover gaming products.",
+all:"All products",mobile:"Mobile",pc:"PC & Console",topups:"Top-ups",giftcards:"Gift cards",
+marketTitle:"Marketplace",marketSub:"Illustrative demo listings and prices.",
+searchPh:"Search products…",search:"Search",
+warning:"Prototype only. Products and prices are examples. Accounts, checkout, payments, seller payouts and automatic top-ups are not connected. Never enter payment details.",
+whyTitle:"Made for gamers",whySub:"A foundation for a future marketplace.",
+safeTitle:"Safer by design",safeDesc:"Clear policies and secure systems matter.",
+globalTitle:"Global-ready",globalDesc:"Arabic, French and English interface.",
+sellerTitle:"Built for sellers",sellerDesc:"Seller listings and order tracking are planned features.",
+footer:"A marketplace concept for gamers.",privacy:"Privacy Policy",
+demo:"Prototype — not a live store",packages:"Packages",notVerified:"Price not verified",
+priceNote:"These are illustrative demo prices, not live offers. Verify regional prices and availability with an official or authorized provider.",
+add:"Add",added:"Added to demo cart",cart:"Demo cart",empty:"Your demo cart is empty.",
+clear:"Clear cart",removed:"Removed",total:"Total",close:"Close",quantity:"Package"
+},
+ar:{
+navGames:"الألعاب",navMarket:"السوق",navWhy:"لماذا نحن",
+eyebrow:"✦ مستواك القادم يبدأ هنا",
+heroTitle:'عالم واحد.<br><span class="gradient">كل الألعاب.</span>',
+lead:"اكتشف شحن الألعاب وبطاقات الهدايا الرقمية واحتياجات اللاعبين في مكان واحد.",
+explore:"تصفح السوق ↗",how:"كيف يعمل",artSub:"ألعابك. عالمك.",
+stat1:"للاعبين في كل مكان",stat2:"لغات الواجهة",stat3:"الأمان مهم",
+popular:"ألعاب مشهورة",popularSub:"اكتشف منتجات الألعاب.",
+all:"كل المنتجات",mobile:"الهاتف",pc:"الكمبيوتر والمنصات",topups:"شحن الألعاب",giftcards:"بطاقات الهدايا",
+marketTitle:"السوق",marketSub:"منتجات وأسعار توضيحية للتجربة.",
+searchPh:"ابحث عن منتج…",search:"بحث",
+warning:"نسخة تجريبية فقط. المنتجات والأسعار أمثلة. الحسابات والدفع ومستحقات البائعين والشحن الآلي غير مفعّلة. لا تدخل معلومات الدفع.",
+whyTitle:"صُنع للاعبين",whySub:"أساس لسوق مستقبلي.",
+safeTitle:"الأمان في التصميم",safeDesc:"السياسات الواضحة والأنظمة الآمنة مهمة.",
+globalTitle:"جاهز للعالم",globalDesc:"واجهة بالعربية والفرنسية والإنجليزية.",
+sellerTitle:"مصمم للبائعين",sellerDesc:"عروض البائعين وتتبع الطلبات من الميزات المخطط لها.",
+footer:"تصور لسوق مخصص للاعبين.",privacy:"سياسة الخصوصية",
+demo:"نسخة تجريبية — ليست متجرًا مباشرًا",packages:"الباقات",notVerified:"السعر غير مؤكد",
+priceNote:"هذه أسعار توضيحية وليست عروضًا مباشرة. تحقق من الأسعار والتوفر لدى مصدر رسمي أو معتمد.",
+add:"أضف",added:"أُضيف إلى السلة التجريبية",cart:"السلة التجريبية",empty:"السلة التجريبية فارغة.",
+clear:"إفراغ السلة",removed:"تم الحذف",total:"المجموع",close:"إغلاق",quantity:"الباقة"
+},
+fr:{
+navGames:"Jeux",navMarket:"Boutique",navWhy:"Pourquoi nous",
+eyebrow:"✦ VOTRE PROCHAIN NIVEAU COMMENCE ICI",
+heroTitle:'Un monde.<br><span class="gradient">Tous les jeux.</span>',
+lead:"Découvrez recharges de jeux, cartes cadeaux numériques et essentiels gaming au même endroit.",
+explore:"Explorer la boutique ↗",how:"Comment ça marche",artSub:"Vos jeux. Votre monde.",
+stat1:"Pour les joueurs partout",stat2:"Langues de l’interface",stat3:"La sécurité compte",
+popular:"Jeux populaires",popularSub:"Découvrez les produits gaming.",
+all:"Tous les produits",mobile:"Mobile",pc:"PC et consoles",topups:"Recharges",giftcards:"Cartes cadeaux",
+marketTitle:"Boutique",marketSub:"Produits et prix indicatifs de démonstration.",
+searchPh:"Rechercher un produit…",search:"Rechercher",
+warning:"Prototype uniquement. Les produits et prix sont des exemples. Comptes, paiement, versements vendeurs et recharges automatiques ne sont pas connectés. N’entrez aucune donnée de paiement.",
+whyTitle:"Pensé pour les joueurs",whySub:"Une base pour une future marketplace.",
+safeTitle:"Sécurité intégrée",safeDesc:"Des règles claires et des systèmes sécurisés sont essentiels.",
+globalTitle:"Prêt pour le monde",globalDesc:"Interface en arabe, français et anglais.",
+sellerTitle:"Pour les vendeurs",sellerDesc:"Les annonces vendeurs et le suivi des commandes sont prévus.",
+footer:"Concept de marketplace pour les joueurs.",privacy:"Politique de confidentialité",
+demo:"Prototype — pas une boutique en direct",packages:"Packs",notVerified:"Prix non vérifié",
+priceNote:"Ces prix sont indicatifs, pas des offres en direct. Vérifiez le prix régional auprès d’un fournisseur officiel ou autorisé.",
+add:"Ajouter",added:"Ajouté au panier démo",cart:"Panier démo",empty:"Votre panier démo est vide.",
+clear:"Vider le panier",removed:"Supprimé",total:"Total",close:"Fermer",quantity:"Pack"
+}
+};
+
+let language = "en";
+let filter = "all";
+let cart = [];
+
+function tr(key) {
+  return (dict[language] && dict[language][key]) || dict.en[key] || key;
+}
+
+function bundlesFor(id) {
+  const bundles = {
+    1:[["100 Diamonds",1.00],["210 Diamonds",2.00],["530 Diamonds",5.00],["1080 Diamonds",10.00]],
+    2:[["60 UC",0.99],["325 UC",4.99],["660 UC",9.99]],
+    3:[["80 CP",0.99],["420 CP",4.99],["880 CP",9.99]],
+    6:[["80 Gems",0.99],["500 Gems",4.99],["1200 Gems",9.99]],
+    7:[["56 Diamonds",0.99],["165 Diamonds",2.99],["568 Diamonds",9.99]]
+  };
+  return bundles[id] || [];
+}
+
+function renderProducts() {
+  const query = document.getElementById("query").value.trim().toLowerCase();
+  const found = items.filter(p => {
+    const matchesFilter = filter === "all" ||
+      p[2] === filter ||
+      (filter === "topup" && p[4].includes("TOP-UP")) ||
+      (filter === "gift" && p[4].includes("GIFT"));
+    const matchesQuery = p.slice(1).join(" ").toLowerCase().includes(query);
+    return matchesFilter && matchesQuery;
+  });
+
+  const target = document.getElementById("products");
+
+  if (!found.length) {
+    target.innerHTML = `<p class="modalnote">${language === "ar" ? "لا توجد منتجات مطابقة." : language === "fr" ? "Aucun produit correspondant." : "No matching products."}</p>`;
+    return;
+  }
+
+  target.innerHTML = found.map(p => {
+    const bundles = bundlesFor(p[0]);
+    const price = bundles.length
+      ? (language === "ar" ? "ابتداءً من $" : language === "fr" ? "Dès $" : "From $") + bundles[0][1].toFixed(2)
+      : tr("notVerified");
+
+    return `<article class="card">
+      <div class="cardart">${p[3]}</div>
+      <div class="body">
+        <div class="kind">${p[4]}</div>
+        <h3>${p[5]}</h3>
+        <div class="desc">${p[1]} · ${p[6]}</div>
+        <div class="priceRow"><span class="price">${price}</span></div>
+        <button class="compare" type="button" data-compare="${p[0]}">${tr("packages")}</button>
+      </div>
+    </article>`;
+  }).join("");
+
+  target.querySelectorAll("[data-compare]").forEach(button => {
+    button.addEventListener("click", () => showBundles(Number(button.dataset.compare)));
+  });
+}
+
+function showBundles(id) {
+  const product = items.find(p => p[0] === id);
+  const bundles = bundlesFor(id);
+  document.getElementById("offerTitle").textContent = product[5];
+  document.getElementById("offerNote").textContent = tr("priceNote");
+
+  const list = document.getElementById("offerList");
+
+  if (!bundles.length) {
+    list.innerHTML = `<div class="offer"><span>${tr("notVerified")}</span></div>`;
+  } else {
+    list.innerHTML = bundles.map((bundle, index) => `
+      <div class="offer">
+        <div><strong>${bundle[0]}</strong><small>${tr("quantity")} ${index + 1}</small></div>
+        <span class="offer-price">$${bundle[1].toFixed(2)}</span>
+        <button class="add" type="button" data-add="${index}">${tr("add")}</button>
+      </div>`).join("");
+
+    list.querySelectorAll("[data-add]").forEach(button => {
+      button.addEventListener("click", () => {
+        const bundle = bundles[Number(button.dataset.add)];
+        cart.push({product:product[5],bundle:bundle[0],price:bundle[1]});
+        document.getElementById("count").textContent = cart.length;
+        toast(tr("added"));
+        renderCart();
+      });
+    });
+  }
+
+  document.getElementById("offerModal").classList.add("open");
+}
+
+function renderCart() {
+  const list = document.getElementById("cartList");
+  document.getElementById("cartTitle").textContent = tr("cart");
+  document.getElementById("cartNote").textContent = tr("warning");
+
+  if (!cart.length) {
+    list.innerHTML = `<p class="modalnote">${tr("empty")}</p>`;
+  } else {
+    list.innerHTML = cart.map((item,index) => `
+      <div class="offer">
+        <div><strong>${item.product}</strong><small>${item.bundle}</small></div>
+        <span class="offer-price">$${item.price.toFixed(2)}</span>
+        <button class="close" type="button" data-remove="${index}" aria-label="Remove">✕</button>
+      </div>`).join("");
+  }
+
+  const total = cart.reduce((sum,item) => sum + item.price,0);
+  document.getElementById("cartTotal").textContent = tr("total") + ": $" + total.toFixed(2);
+  document.getElementById("count").textContent = cart.length;
+
+  list.querySelectorAll("[data-remove]").forEach(button => {
+    button.addEventListener("click", () => {
+      cart.splice(Number(button.dataset.remove),1);
+      renderCart();
+    });
+  });
+}
+
+function toast(message) {
+  const element = document.getElementById("toast");
+  element.textContent = message;
+  element.classList.add("show");
+  window.setTimeout(() => element.classList.remove("show"),2200);
+}
+
+function setLanguage(value) {
+  language = value;
+  document.documentElement.lang = value;
+  document.documentElement.dir = value === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-key]").forEach(element => {
+    const key = element.dataset.key;
+    if (dict[value] && dict[value][key]) element.textContent = dict[value][key];
+  });
+
+  document.querySelectorAll("[data-html]").forEach(element => {
+    const key = element.dataset.html;
+    if (dict[value] && dict[value][key]) element.innerHTML = dict[value][key];
+  });
+
+  document.querySelectorAll("[data-placeholder]").forEach(element => {
+    element.placeholder = tr(element.dataset.placeholder);
+  });
+
+  renderProducts();
+}
+
+document.getElementById("lang").addEventListener("change", event => {
+  setLanguage(event.target.value);
+});
+
+document.querySelectorAll("[data-filter]").forEach(button => {
+  button.addEventListener("click", () => {
+    filter = button.dataset.filter;
+    document.querySelectorAll("[data-filter]").forEach(item => {
+      item.classList.toggle("active",item === button);
+    });
+    renderProducts();
+  });
+});
+
+document.getElementById("query").addEventListener("input",renderProducts);
+document.getElementById("searchBtn").addEventListener("click",renderProducts);
+
+document.getElementById("cart").addEventListener("click",() => {
+  renderCart();
+  document.getElementById("cartModal").classList.add("open");
+});
+
+document.getElementById("closeCart").addEventListener("click",() => {
+  document.getElementById("cartModal").classList.remove("open");
+});
+
+document.getElementById("closeOffers").addEventListener("click",() => {
+  document.getElementById("offerModal").classList.remove("open");
+});
+
+document.getElementById("offerModal").addEventListener("click",event => {
+  if (event.target.id === "offerModal") event.currentTarget.classList.remove("open");
+});
+
+document.getElementById("cartModal").addEventListener("click",event => {
+  if (event.target.id === "cartModal") event.currentTarget.classList.remove("open");
+});
+
+document.getElementById("clearCart").addEventListener("click",() => {
+  cart = [];
+  renderCart();
+});
+
+document.addEventListener("keydown",event => {
+  if (event.key === "Escape") {
+    document.querySelectorAll(".modal").forEach(modal => modal.classList.remove("open"));
+  }
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+renderProducts();
+</script>
+</body>
+</html>
